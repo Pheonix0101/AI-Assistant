@@ -26,7 +26,7 @@ const storage = multer.diskStorage({
 
 router.post("/", askAssistant);
 router.post('/file', upload.array('files'), fileAssistant);
-router.post('/chat',handleMessage );
+router.get('/chat',handleMessage );
 router.delete('/delete', deleteFiles);
 
 module.exports = router;

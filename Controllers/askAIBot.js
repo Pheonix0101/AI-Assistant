@@ -23,7 +23,8 @@ const askAssistant = async (req, res) => {
       model: "gpt-3.5-turbo",
     });
     console.log(question);
-    const ans = completion.choices[0].message.content;
+    let ans = completion.choices[0].message.content;
+    ans = ans.replace(/(\d\.)/g, "\n$1");
     logInteraction(question, ans);
     res.send(ans);
   } catch (error) {
@@ -38,8 +39,6 @@ function readExcelFile(filePath) {
   return xlsx.utils.sheet_to_json(worksheet);
 }
 
-// const data1 = readExcelFile("Demo.xlsx");
-// const data2 = readExcelFile("Demo2.xlsx");
 
 function readAllExcelFiles(directoryPath) {
   if (!fs.existsSync(directoryPath)) {
@@ -110,7 +109,6 @@ const fileAssistant = async (req, res) => {
   }
 };
 
-// let conversationHistory = [];
 
 const handleMessage = async (req, res) => {
   try {
