@@ -1,3 +1,8 @@
+
+# AI Assistant
+
+This backend system is built using Node.js and integrated with the ChatGPT API. reference `<https://platform.openai.com/docs/api-reference>`.
+
 # Pre-requisites
 
 Install Node.js version 20.11.0
@@ -40,4 +45,4 @@ http://localhost:9000
 
 ## Teck-stack and library used in this project.
 
-`Node.js, Express.js, javascript, openai, and Multer,`
+`Node.js, Express.js, javascript, openai, and Multer`
